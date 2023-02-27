@@ -1,17 +1,9 @@
 import sys
 
-def check_str(str):
-  result = False
-  for s in str:
-    if ord(s) < 32 or ord(s) > 126:
-      result = True
-  return result
 dict = {}
 count = 0
 while True:
   tree = sys.stdin.readline().strip()
-  if check_str(tree):
-    break
   if not tree:
     break
   count += 1
