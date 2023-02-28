@@ -15,7 +15,6 @@ def get_input(N):
       for _ in range(N):
         data.append(-heapq.heappop(heap))
       heap = [-_ for _ in data]
-      heapq.heapify(heap)
     
   if N == 1:
     print(-heap[0])
