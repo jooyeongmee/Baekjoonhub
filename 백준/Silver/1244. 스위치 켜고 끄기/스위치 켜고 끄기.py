@@ -15,26 +15,22 @@ for (g, s) in li:
                 status[i] = status[i] ^ 1
 
     elif g == 2:
-        i = s-1
-        j = s+1
-        while True:
-            if i == 0 or j == num+1:
-                for k in range(i+1, j):
-                    status[k] = status[k] ^ 1
-                break
+        i = s - 1
+        j = s + 1
+        status[s] = status[s] ^ 1
+        while i >= 1 and j <= num:
             if status[i] != status[j]:
-                for k in range(i+1, j):
-                    status[k] = status[k] ^ 1
                 break
+            status[i] = status[i] ^ 1
+            status[j] = status[j] ^ 1
             i -= 1
             j += 1
 
-count = 0
-for i in range(num+1):
-    if count >= 20:
+for i in range(1, num+1):
+    print(status[i], end=" ")
+    if i % 20 == 0:
         print()
-        count = 0
-    if i != 0:
-        count += 1
-        print(status[i], end=" ")
+
+
+
 
