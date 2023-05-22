@@ -10,5 +10,5 @@ for i in range(num):
     else:
         files[ext] = 1
 
-for _ in sorted(files.keys()):
+for _ in sorted(files):
     print(_, files[_])
